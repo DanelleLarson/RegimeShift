@@ -1,0 +1,86 @@
+README FILE
+
+Authors:  Killian Davis, Wako Bungula, Danelle M. Larson
+
+Points of contact: Killian Davis (PERMANENT EMAIL) or Danelle M. Larson (dmlarson@usgs.gov) 
+
+Repository Type:  R script and Python script supporting publication
+
+Year of Origin:   2024 (original publication)
+
+Year of Version:  2024
+
+Digital Object Identifier (DOI): https://doi.org/XXXXXXXXXXXXXXXXXXXXXXXX
+
+
+
+
+This repository contains analysis codes to run topological data analysis alogorithms, including persistent homology and change point detection [binary segmentation method].
+
+Repository organization
+The repository contains the following folders and files:
+
+
+README.md, which is this file.
+
+LIST MAIN FOLDERS HERE.
+
+
+Data Collection and QAQC Procedures folder holding information about the original data collection and quality assurance/quality control (QAQC) procedures Further information can be found at the Long-Term Resource Monitoring website.
+
+
+QF_flag_primer.pdf PDF file explaining quality factor (QF) codes assessing relibility and confidence in the water quality dataset.
+
+WQ_manual.pdf PDF file explaining the field and laboratory data collection procedures.
+
+
+
+analysis_codes folder holding all analysis codes.
+
+
+RF interpolation with notes and evalulation.R R file for interpolating missingness with random forest and assessing interpolation performance.
+
+interpolate entire dataset with random forests.R R file runs interpolation with random forests, as well as imputation, for missing water quality variables. Creates a new dataset with no missingness.
+
+regression-trees.R R file for interpolating missingness with regression trees.
+
+DataInterpolation_IDW.ipynb Python file for interpolating missingness with Inverse-Distance Weighting (IDW) for 3-year data averages.
+
+IDW1year.ipynb Python file for interpolating missingness with Inverse-Distance Weighting (IDW) for 1-year data averages.
+
+IDW_Error_Analysis.ipynb Python file for assessing interpolation preformance using Inverse-Distance Weighting (IDW).
+
+MVPRegression.ipynb Python file for interpolating missingness using multi-variable polynomial regression analysis (MVPR) of various degrees of polynomials.
+
+water-data-cleaning Rmarkdown summary.pdf explains the general pre-processing of the data prior to interpolating. Intended for internal users of the LTRM water quality data.
+We do not include the ordinary kriging files herein because the code and associated files was prohibitively extensive. We refer you to the associated manuscript for our specific procedures, and to the ESRI's 'kriging' tool instructions.
+
+
+
+Data sets folder holding all data sets needed to run analysis_codes files. These are non-authorative copies of the data and are included to allow a reproducible workflow. The authorative copies will reside on the Upper Misssisippi River Restoration Program's data portal: https://umesc.usgs.gov/data_library/water_quality/water1_query.shtml.
+
+
+ltrm_water_lat_long.csv CSV file containing raw LTRM data prior to 'data cleaning' as described in the RMarkdown file called water-data-cleaning Rmarkdown summary.pdf
+
+
+water_data_pfneg.csv CSV file containing all data prior to interpolating missingness.
+
+
+
+
+
+
+
+Subject area and programming background required
+This code assumes the user is familiar with R including knitr (i.e., the engine driving RMarkdown and Python including sklearn) and Python.
+No subject area expertise is required although familiar with topological data analysis may be required to use this with different datasets.
+
+Software version details
+This code uses R, version 4.1.2 or higher (R Core Team 2020) ; Python, version 3.10.7 or higher (Python Software Foundation 2021).
+
+Code run time
+The codes take approximately <1 minute to run each script.
+
+Acknowledgments
+The data and analysis were funded as part of the U.S. Army Corps of Engineers’ Upper Mississippi River Restoration Program and the National Science Foundation's Research Experience for Undergraduates Program. We thank the many Long-Term Resource Monitoring affiliated scientists and biologists that have developed and maintained a high-quality monitoring program over the past two decades. The UW-La Crosse Research Experience for Undergraduates Program funded authors AS, AM, KD, FM. The UW-La Crosse’s Dean’s Distinguished Fellowship supported authors CM. The U.S. Geological Survey’s Biological Threats and Invasive Species Program funded RAE.
+Any use of trade, firm, or product names is for descriptive purposes only and does not imply endorsement by the U.S. Government.
